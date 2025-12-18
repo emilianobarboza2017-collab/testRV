@@ -8,22 +8,21 @@
     <a-scene>
       <a-assets>
         <a-asset-item
-          id="glbModel"
-          src="./cadeiras.glb"
-          response-type="arraybuffer">
+          id="daeModel"
+          src="./furg.dae">
         </a-asset-item>
       </a-assets>
 
-      <!-- Modelo -->
+      <!-- Modelo COLLADA -->
       <a-entity
-        gltf-model="#glbModel"
-        position="0 0 -1.5"
-        scale="0.5 0.5 0.5">
+        collada-model="#daeModel"
+        position="0 0 -3"
+        scale="1 1 1">
       </a-entity>
 
       <!-- Cámara -->
       <a-camera
-        position="0 0.8 1.5"
+        position="0 1 2"
         rotation="-15 0 0">
       </a-camera>
 
@@ -31,3 +30,4 @@
     </a-scene>
   </body>
 </html>
+
