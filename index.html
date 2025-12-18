@@ -1,14 +1,27 @@
 <html>
   <head>
+    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
   </head>
-  <body>
-     <a-scene>
-	 <a-assets>
-    		<a-asset-item id="glbModel" src="cadeiras.glb"></a-asset-item>
-   	</a-assets>
 
-  	<a-gltf-model src="#glbModel" position="0 0 0" scale="1 1 1"></a-gltf-model>
-     </a-scene>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item
+          id="glbModel"
+          src="./cadeiras.glb"
+          response-type="arraybuffer">
+        </a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#glbModel"
+        position="0 0 -3"
+        scale="0.5 0.5 0.5">
+      </a-entity>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
   </body>
 </html>
+
