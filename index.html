@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <title>FURG - Modelo 3D</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- A-Frame -->
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+    <!-- Orbit Controls -->
+    <script src="https://unpkg.com/aframe-orbit-controls@1.3.2/dist/aframe-orbit-controls.min.js"></script>
   </head>
 
   <body>
     <a-scene background="color: #ECECEC">
-      
+
       <!-- Assets -->
       <a-assets>
         <a-asset-item
@@ -23,28 +28,29 @@
       <a-entity
         gltf-model="#furgModel"
         position="0 0 -2"
-        rotation="0 0 -90">
+        rotation="0 0 -90"
         scale="1 1 1">
       </a-entity>
 
-      <!-- Cámara -->
-      <a-camera
-        position="0 0 0"
-        rotation="-15 0 0"
-        look-controls="enabled: true"
-        wasd-controls="enabled: true">
-      </a-camera>
+      <!-- Cámara orbitable -->
+      <a-entity
+        camera
+        position="0 1 3"
+        orbit-controls="
+          target: 0 0 0;
+          enableDamping: true;
+          dampingFactor: 0.05;
+          rotateSpeed: 0.3;
+          zoomSpeed: 0.8;">
+      </a-entity>
 
-      <!-- Luz básica (por si el GLB no trae luces) -->
-      <a-entity light="type: ambient; intensity: 0.8"></a-entity>
-      <a-entity light="type: directional; intensity: 0.6" position="1 2 1"></a-entity>
+      <!-- Luces -->
+      <a-entity light="type: ambient; intensity: 0.9"></a-entity>
+      <a-entity light="type: directional; intensity: 0.8" position="1 2 1"></a-entity>
 
     </a-scene>
   </body>
 </html>
-
-
-
 
 
 
