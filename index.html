@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -32,17 +32,20 @@
         scale="1 1 1">
       </a-entity>
 
-      <!-- Cámara orbitable -->
+     <!-- Cámara orbitable (más cerca) -->
       <a-entity
         camera
-        position="0 1 9"
+        position="0 1 4"
         orbit-controls="
-          target: 0 0 0;
+          target: 0 0 -2;
           enableDamping: true;
           dampingFactor: 0.05;
           rotateSpeed: 0.3;
-          zoomSpeed: 0.8;">
-      </a-entity>
+          zoomSpeed: 0.8;
+          minDistance: 1.5;
+          maxDistance: 12;">
+     </a-entity>
+
 
       <!-- Luces -->
       <a-entity light="type: ambient; intensity: 0.9"></a-entity>
@@ -51,6 +54,7 @@
     </a-scene>
   </body>
 </html>
+
 
 
 
