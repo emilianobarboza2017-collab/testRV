@@ -1,32 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
+    <title>FURG - Modelo 3D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
   </head>
 
   <body>
-    <a-scene>
+    <a-scene background="color: #ECECEC">
+      
+      <!-- Assets -->
       <a-assets>
         <a-asset-item
-          id="daeModel"
-          src="./furg.dae">
+          id="furgModel"
+          src="./furg.glb"
+          response-type="arraybuffer">
         </a-asset-item>
       </a-assets>
 
-      <!-- Modelo COLLADA -->
+      <!-- Modelo GLB -->
       <a-entity
-        collada-model="#daeModel"
-        position="0 0 -3"
+        gltf-model="#furgModel"
+        position="0 0 -2"
         scale="1 1 1">
       </a-entity>
 
       <!-- Cámara -->
       <a-camera
-        position="0 1 2"
-        rotation="-15 0 0">
+        position="0 1.2 2.5"
+        rotation="-15 0 0"
+        look-controls="enabled: true"
+        wasd-controls="enabled: true">
       </a-camera>
 
-      <a-sky color="#ECECEC"></a-sky>
+      <!-- Luz básica (por si el GLB no trae luces) -->
+      <a-entity light="type: ambient; intensity: 0.8"></a-entity>
+      <a-entity light="type: directional; intensity: 0.6" position="1 2 1"></a-entity>
+
     </a-scene>
   </body>
 </html>
