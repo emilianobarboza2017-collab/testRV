@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -66,10 +66,19 @@
     <!-- LUCES -->
     <a-entity light="type: ambient; intensity: 0.9"></a-entity>
     <a-entity light="type: directional; intensity: 0.8" position="2 4 2"></a-entity>
-
+    <a-plane
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="500"
+        height="500"
+        color="#B0B0B0"
+        material="roughness: 0.8; metalness: 0.1"
+        shadow="receive: true">
+    </a-plane>
   </a-scene>
 </body>
 </html>
+
 
 
 
