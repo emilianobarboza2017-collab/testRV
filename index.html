@@ -24,7 +24,7 @@
       </a-asset-item>
     </a-assets>
 
-    <!-- Modelo GLB (ESCALA NORMAL) -->
+    <!-- Modelo GLB (escala normal) -->
     <a-entity
       gltf-model="#furgModel"
       position="0 0 0"
@@ -32,16 +32,16 @@
       scale="1 1 1">
     </a-entity>
 
-    <!-- Cámara orbitable (distancia cómoda) -->
+    <!-- Cámara con MUCHO zoom -->
     <a-entity
       camera
       position="0 1.2 3"
       orbit-controls="
         target: 0 0 0;
-        minDistance: 0.8;
-        maxDistance: 6;
-        rotateSpeed: 0.3;
-        zoomSpeed: 0.9;
+        minDistance: 0.02;
+        maxDistance: 20;
+        zoomSpeed: 2.5;
+        rotateSpeed: 0.35;
         enableDamping: true;
         dampingFactor: 0.05;">
     </a-entity>
@@ -53,6 +53,7 @@
   </a-scene>
 </body>
 </html>
+
 
 
 
